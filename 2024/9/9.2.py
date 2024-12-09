@@ -17,15 +17,16 @@ while len(line) > 0:
 for pos, blocks in files[::-1]:
     try:
         i = next(
-            iter(i for i, (_, length) in enumerate(empty_spaces) if length >= blocks)
+            iter(
+                i
+                for i, (j, length) in enumerate(empty_spaces)
+                if j < pos and length >= blocks
+            )
         )
     except StopIteration:
         continue
 
     j, length = empty_spaces[i]
-    if j > pos:
-        break
-
     expansion[j : j + blocks] = [expansion[pos]] * blocks
     expansion[pos : pos + blocks] = [-1] * blocks
     if length == blocks:
