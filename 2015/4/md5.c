@@ -3,12 +3,12 @@
 #include <stdint.h>
 
 static Janet md5(int32_t argc, Janet *argv) {
-    // get the input string from the user
+    // get the input Array from the user
     janet_fixarity(argc, 1);
     JanetArray *arr = janet_getarray(argv, 0);
     unsigned char bytes[arr->count];
 
-    // conver Array into c byte array
+    // convert Array into c byte array
     for (int i = 0; i < arr->count; i++) {
         Janet datum = arr->data[i];
         int32_t d = janet_getinteger(&datum, 0);
@@ -32,7 +32,7 @@ static Janet md5(int32_t argc, Janet *argv) {
 }
 
 static const JanetReg cfuns[] = {
-    {"md5", md5, "(md5/md5)\n\nComputes an md5 hash."},
+    {"md5", md5, "(md5/md5)\n\nComputes an md5 hash string for a provided byte array."},
     {NULL, NULL, NULL}
 };
 
