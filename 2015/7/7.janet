@@ -21,7 +21,6 @@
 (defn w-rshift [v n x] (put mem x (brshift (smart-get v) n)))
 (defn w-not [v x] (put mem x (band 0xffff (bnot (smart-get v)))))
 
-
 (def funs-by-wire
   (table
     ;(catseq [arr :in (peg/match wiring-grammar (slurp "7.txt"))
