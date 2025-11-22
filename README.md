@@ -13,6 +13,7 @@ In the past, I've used challenges like [Project Euler](https://projecteuler.net/
 Going back to the first year, I've begun solving some problems in Janet.
 
 Day 4 was a bit tricky - MD5 isn't built into Janet. I started trying to leverage the unix `md5` command, but that was incredibly slow, which surprised me. In the end I wrote a [small C extension](2015/4/md5.c) to compute MD5 hashes, which got the answer in a few seconds even for the 6-zero variant.
+Day 20 turned out to also be a but too computationally intensive for Janet, so I wrote [another C extension](2015/20/day20.c) for that one, too, for the heavy lifting of computing the divisor function.
 
 ## 2023
 
