@@ -15,6 +15,12 @@ Going back to the first year, I've begun solving some problems in Janet.
 Day 4 was a bit tricky - MD5 isn't built into Janet. I started trying to leverage the unix `md5` command, but that was incredibly slow, which surprised me. In the end I wrote a [small C extension](2015/4/md5.c) to compute MD5 hashes, which got the answer in a few seconds even for the 6-zero variant.
 Day 20 turned out to also be a but too computationally intensive for Janet, so I wrote [another C extension](2015/20/day20.c) for that one, too, for the heavy lifting of computing the divisor function.
 
+## 2016
+
+Continuing onto the second year, I'm doing more Janet.
+
+Day 9 was a particularly fun way to dig deeper into [parsing expression grammars (PEGs)](https://en.wikipedia.org/wiki/Parsing_expression_grammar), which Janet has very nice native support for. I actually always parse my inputs using PEGs in Janet, but for this problem I was able to use PEGs to do all of the heavy lifting - first to perform the decompression in Part 1 and then to parse the nested decompressions as a tree in Part 2. I couldn't figure out a good way to do the recursion in pure PEG for Part 2, so I had to resort to calling a function from the PEG that ran the PEG again, but maybe there is a more clever way to do it?
+
 ## 2023
 
 Before starting Advent of Code 2024, I warmed up on a few problems from 2023 in Python.
