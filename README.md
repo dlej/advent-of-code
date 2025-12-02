@@ -21,6 +21,8 @@ Continuing onto the second year, I'm doing more Janet.
 
 Day 9 was a particularly fun way to dig deeper into [parsing expression grammars (PEGs)](https://en.wikipedia.org/wiki/Parsing_expression_grammar), which Janet has very nice native support for. I actually always parse my inputs using PEGs in Janet, but for this problem I was able to use PEGs to do all of the heavy lifting - first to perform the decompression in Part 1 and then to parse the nested decompressions as a tree in Part 2. I couldn't figure out a good way to do the recursion in pure PEG for Part 2, so I had to resort to calling a function from the PEG that ran the PEG again, but maybe there is a more clever way to do it?
 
+Day 10 was an opportunity to dig into fibers and Janet's [`ev` module](https://janet-lang.org/api/ev.html) as a way to implement the bot DAG. I'm still not sure if there's a way to properly await a fiber sent to the event loop, but creating a dedicated output fiber for collecting bot outputs was a decent hack that let me avoid writing a polling loop.
+
 ## 2023
 
 Before starting Advent of Code 2024, I warmed up on a few problems from 2023 in Python.
