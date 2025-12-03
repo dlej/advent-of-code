@@ -34,3 +34,9 @@ NumPy just makes working with grid-based data a lot easier, and often faster.
 
 **Timing:** I usually go for speed of implementation rather than speed of execution, but execution time shouldn't be crazy.
 If it takes more than a few seconds to run, there's probably a much better way to do it, which I'll try to go for.
+
+## 2025
+
+**Language:** I'm _upping the ante_ this year by doing everything in Janet. Going a step further, I'm trying to get a better mastery of PEGs, and so will try to implement as much as I can in them.
+
+Day 3 was my first big PEG use case. I was able to write both parts as a generic PEG accepting a number of digits as a parameter, and the PEG computed the entire result including the sum! I also figured out that the `sub` pattern does what I was missing back in 2016 Day 10, so I had no need to hack together an external function to call another PEG.
