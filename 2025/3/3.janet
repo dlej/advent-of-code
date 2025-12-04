@@ -3,7 +3,7 @@
   (peg/compile
     ~{:init (only-tags (constant ,(dec n) :i))
       :i (backref :i)
-      :dec (only-tags (/ (backref :i) ,dec :i))
+      :dec (only-tags (/ :i ,dec :i))
       :max (/ (group (some (<- :d))) ,max-of :max-res)
       :loop (* :init
                (repeat ,n
