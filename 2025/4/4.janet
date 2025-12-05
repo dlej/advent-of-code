@@ -62,7 +62,9 @@
 # wait until yielding control back to the bots
 # doesn't result in any removals
 (var check-val removals)
-(while (= check-val removals)
+(ev/sleep 0)
+(while (not= check-val removals)
+  (set check-val removals)
   (ev/sleep 0))
 
 (print "part 2: " removals)
