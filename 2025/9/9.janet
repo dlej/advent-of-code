@@ -16,7 +16,6 @@
 
 (print "part 1: " (first (last areas)))
 
-
 (defn get-extent [tups]
   (if (empty? tups) nil
     (let [[tup & tups] (sorted tups)]
